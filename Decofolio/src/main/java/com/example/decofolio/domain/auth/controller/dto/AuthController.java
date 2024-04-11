@@ -1,12 +1,13 @@
 package com.example.decofolio.domain.auth.controller.dto;
 
+import com.example.decofolio.domain.auth.controller.dto.request.SignInRequest;
 import com.example.decofolio.domain.auth.controller.dto.response.TokenResponse;
+import com.example.decofolio.domain.auth.service.SignInService;
 import com.example.decofolio.domain.auth.service.TokenService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RequiredArgsConstructor
 @RequestMapping("/auth")
@@ -14,9 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final TokenService tokenService;
+    private final SignInService signInService;
 
     @PutMapping("/token")
     public TokenResponse userTokenRefresh(@RequestHeader("Refresh-Token") String refreshToken) {
         return tokenService.execute(refreshToken);
+    }
+
+    @PostMapping("/login")
+    public TokenResponse signIn(@RequestBody @Valid SignInRequest signInRequest) {
+        return signInService.execute(signInRequest);
     }
 }
