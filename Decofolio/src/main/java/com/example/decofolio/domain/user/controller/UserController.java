@@ -1,7 +1,9 @@
 package com.example.decofolio.domain.user.controller;
 
 import com.example.decofolio.domain.user.controller.dto.request.SignUpRequest;
+import com.example.decofolio.domain.user.controller.dto.request.WithdrawalRequest;
 import com.example.decofolio.domain.user.service.SignUpService;
+import com.example.decofolio.domain.user.service.WithdrawalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import javax.validation.Valid;
 public class UserController {
 
     private final SignUpService signUpService;
+    private final WithdrawalService withdrawalService;
 
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -22,5 +25,9 @@ public class UserController {
         signUpService.execute(signUpRequest);
     }
 
+    @DeleteMapping
+    public void Withdrawal(@RequestBody @Valid WithdrawalRequest request) {
+        withdrawalService.execute(request);
+    }
     
 }
