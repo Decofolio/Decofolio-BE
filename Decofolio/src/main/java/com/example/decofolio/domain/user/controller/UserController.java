@@ -1,8 +1,10 @@
 package com.example.decofolio.domain.user.controller;
 
 import com.example.decofolio.domain.user.controller.dto.request.SignUpRequest;
+import com.example.decofolio.domain.user.controller.dto.request.UpdateInfoRequest;
 import com.example.decofolio.domain.user.controller.dto.request.WithdrawalRequest;
 import com.example.decofolio.domain.user.service.SignUpService;
+import com.example.decofolio.domain.user.service.UpdateInfoService;
 import com.example.decofolio.domain.user.service.WithdrawalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,7 @@ public class UserController {
 
     private final SignUpService signUpService;
     private final WithdrawalService withdrawalService;
+    private final UpdateInfoService updateInfoService;
 
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -29,5 +32,10 @@ public class UserController {
     public void Withdrawal(@RequestBody @Valid WithdrawalRequest request) {
         withdrawalService.execute(request);
     }
-    
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PatchMapping
+    public void updateUser(@RequestBody @Valid UpdateInfoRequest updateInfoRequest) {
+        updateInfoService.execute(updateInfoRequest);
+    }
 }
