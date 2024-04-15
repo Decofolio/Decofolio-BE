@@ -24,7 +24,7 @@ public class UserController {
     public void signUp(@RequestBody @Valid SignUpRequest signUpRequest) {
         signUpService.execute(signUpRequest);
     }
-
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping
     public void Withdrawal(@RequestBody @Valid WithdrawalRequest request) {
         withdrawalService.execute(request);
