@@ -16,6 +16,9 @@ public enum ErrorCode {
     USER_NOT_FOUND(404, "User Not Found"),
     REFRESH_TOKEN_NOT_FOUND(404, "Refresh Token Not Found"),
     FEED_NOT_FOUUND(404, "Feed Not Found"),
+    WRITER_MISMATCH(401, "Writer Mismatch"),
+    LINK_NOT_FOUND(404, "Link Not Found"),
+
 
     USER_EXISTS(409, "User Already Exists"),
 
