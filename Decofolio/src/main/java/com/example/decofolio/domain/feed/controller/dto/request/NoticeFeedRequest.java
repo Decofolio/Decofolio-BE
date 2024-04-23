@@ -116,8 +116,30 @@ public class NoticeFeedRequest {
     private String awardTitle5;
 
     private String awardDay5;
+
+    //활동내역(ex.title : 활동명, content : 경험한 내용)
+    private String activityTitle1;
+
+    private String activityContent1;
+
+    private String activityTitle2;
+
+    private String activityContent2;
+
+    private String activityTitle3;
+
+    private String activityContent3;
+
+    private String activityTitle4;
+
+    private String activityContent4;
+
+    private String activityTitle5;
+
+    private String activityContent5;
+
     @Builder
-    public NoticeFeedRequest(String title, String subtitle, String name, String phoneNumber, String birthday, String country, String email, String link1, String link2, String link3, String link4, String eductionTitle1, String eductionTitle2, String eductionContent1, String eductionContent2, String experienceContent1, String experienceContent2, String experienceContent3, String experienceContent4, String experienceContent5, String experienceTitle1, String experienceTitle2, String experienceTitle3, String experienceTitle4, String experienceTitle5, String certificateDay1, String certificateTitle1, String certificateDay2, String certificateTitle2, String certificateDay3, String certificateTitle3, String certificateDay4, String certificateTitle4, String certificateDay5, String certificateTitle5, String awardTitle1, String awardDay1, String awardTitle2, String awardDay2, String awardTitle3, String awardDay3, String awardTitle4, String awardDay4, String awardTitle5, String awardDay5) {
+    public NoticeFeedRequest(String title, String subtitle, String name, String phoneNumber, String birthday, String country, String email, String link1, String link2, String link3, String link4, String eductionTitle1, String eductionTitle2, String eductionContent1, String eductionContent2, String experienceContent1, String experienceContent2, String experienceContent3, String experienceContent4, String experienceContent5, String experienceTitle1, String experienceTitle2, String experienceTitle3, String experienceTitle4, String experienceTitle5, String certificateDay1, String certificateTitle1, String certificateDay2, String certificateTitle2, String certificateDay3, String certificateTitle3, String certificateDay4, String certificateTitle4, String certificateDay5, String certificateTitle5, String awardTitle1, String awardDay1, String awardTitle2, String awardDay2, String awardTitle3, String awardDay3, String awardTitle4, String awardDay4, String awardTitle5, String awardDay5, String activityTitle1, String activityContent1, String activityTitle2, String activityContent2, String activityTitle3, String activityContent3, String activityTitle4, String activityContent4, String activityTitle5, String activityContent5) {
         this.title = title;
         this.subtitle = subtitle;
         this.name = name;
@@ -163,6 +185,16 @@ public class NoticeFeedRequest {
         this.awardDay4 = awardDay4;
         this.awardTitle5 = awardTitle5;
         this.awardDay5 = awardDay5;
+        this.activityTitle1 = activityTitle1;
+        this.activityContent1 = activityContent1;
+        this.activityTitle2 = activityTitle2;
+        this.activityContent2 = activityContent2;
+        this.activityTitle3 = activityTitle3;
+        this.activityContent3 = activityContent3;
+        this.activityTitle4 = activityTitle4;
+        this.activityContent4 = activityContent4;
+        this.activityTitle5 = activityTitle5;
+        this.activityContent5 = activityContent5;
     }
 }
 

@@ -69,6 +69,16 @@ public class NoticeFeedService {
                 .awardDay4(noticeFeedRequest.getAwardDay4())
                 .awardTitle5(noticeFeedRequest.getAwardTitle5())
                 .awardDay5(noticeFeedRequest.getAwardDay5())
+                .activityTitle1(noticeFeedRequest.getActivityTitle1())
+                .activityContent1(noticeFeedRequest.getActivityContent1())
+                .activityTitle2(noticeFeedRequest.getActivityTitle2())
+                .activityContent2(noticeFeedRequest.getActivityContent2())
+                .activityTitle3(noticeFeedRequest.getActivityTitle3())
+                .activityContent3(noticeFeedRequest.getActivityContent3())
+                .activityTitle4(noticeFeedRequest.getActivityTitle4())
+                .activityContent4(noticeFeedRequest.getActivityContent4())
+                .activityTitle5(noticeFeedRequest.getActivityTitle5())
+                .activityContent5(noticeFeedRequest.getActivityContent5())
                 .user(user)
                 .build();
         feedRepository.save(feed);
