@@ -3,10 +3,10 @@ package com.example.decofolio.domain.feed.domain;
 import javax.persistence.*;
 
 import com.example.decofolio.domain.user.domain.User;
-import lombok.*;
-import org.hibernate.validator.constraints.URL;
-
-import java.util.List;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -182,12 +182,84 @@ public class Feed {
     @Column(length = 100, nullable = true)
     private String activityContent5;
 
+    @Column(length = 100, nullable = true)
+    private String skillName1;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint1;
+
+    @Column(length = 100, nullable = true)
+    private String skillName2;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint2;
+
+    @Column(length = 100, nullable = true)
+    private String skillName3;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint3;
+
+    @Column(length = 100, nullable = true)
+    private String skillName4;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint4;
+
+    @Column(length = 100, nullable = true)
+    private String skillName5;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint5;
+
+    @Column(length = 100, nullable = true)
+    private String skillName6;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint6;
+
+    @Column(length = 100, nullable = true)
+    private String skillName7;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint7;
+
+    @Column(length = 100, nullable = true)
+    private String skillName8;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint8;
+
+    @Column(length = 100, nullable = true)
+    private String skillName9;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint9;
+
+    @Column(length = 100, nullable = true)
+    private String skillName10;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint10;
+
+    @Column(length = 100, nullable = true)
+    private String skillName11;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint11;
+
+    @Column(length = 100, nullable = true)
+    private String skillName12;
+
+    @Column(length = 100, nullable = true)
+    private String skillPoint12;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Builder
-    public Feed(String title, String subtitle, String name, String phoneNumber, String birthday, String country, String link1, String link2, String link3, String link4, String email, String eductionTitle1, String eductionTitle2,  String eductionContent1, String eductionContent2, String experienceTitle1, String experienceContent1, String experienceTitle2, String experienceContent2,String experienceTitle3, String experienceContent3,String experienceTitle4, String experienceContent4,String experienceTitle5, String experienceContent5, String certificateDay1, String certificateTitle1, String certificateDay2, String certificateTitle2, String certificateDay3, String certificateTitle3, String certificateDay4, String certificateTitle4, String certificateDay5, String certificateTitle5, String awardTitle1, String awardDay1, String awardTitle2, String awardDay2, String awardTitle3, String awardDay3, String awardTitle4, String awardDay4, String awardTitle5, String awardDay5, String activityTitle1, String activityContent1, String activityTitle2, String activityContent2, String activityTitle3, String activityContent3, String activityTitle4, String activityContent4, String activityTitle5, String activityContent5, User user) {
+    public Feed(String title, String subtitle, String name, String phoneNumber, String birthday, String country, String link1, String link2, String link3, String link4, String email, String eductionTitle1, String eductionTitle2,  String eductionContent1, String eductionContent2, String experienceTitle1, String experienceContent1, String experienceTitle2, String experienceContent2,String experienceTitle3, String experienceContent3,String experienceTitle4, String experienceContent4,String experienceTitle5, String experienceContent5, String certificateDay1, String certificateTitle1, String certificateDay2, String certificateTitle2, String certificateDay3, String certificateTitle3, String certificateDay4, String certificateTitle4, String certificateDay5, String certificateTitle5, String awardTitle1, String awardDay1, String awardTitle2, String awardDay2, String awardTitle3, String awardDay3, String awardTitle4, String awardDay4, String awardTitle5, String awardDay5, String activityTitle1, String activityContent1, String activityTitle2, String activityContent2, String activityTitle3, String activityContent3, String activityTitle4, String activityContent4, String activityTitle5, String activityContent5, String skillName1, String skillPoint1, String skillName2, String skillPoint2, String skillName3, String skillPoint3, String skillName4, String skillPoint4, String skillName5, String skillPoint5, String skillName6, String skillPoint6, String skillName7, String skillPoint7, String skillName8, String skillPoint8, String skillName9, String skillPoint9, String skillName10, String skillPoint10, String skillName11, String skillPoint11, String skillName12, String skillPoint12, User user) {
         this.title = title;
         this.subtitle = subtitle;
         this.name = name;
@@ -244,6 +316,30 @@ public class Feed {
         this.activityContent4 = activityContent4;
         this.activityTitle5 = activityTitle5;
         this.activityContent5 = activityContent5;
+        this.skillName1 = skillName1;
+        this.skillPoint1 = skillPoint1;
+        this.skillName2 = skillName2;
+        this.skillPoint2 = skillPoint2;
+        this.skillName3 = skillName3;
+        this.skillPoint3 = skillPoint3;
+        this.skillName4 = skillName4;
+        this.skillPoint4 = skillPoint4;
+        this.skillName5 = skillName5;
+        this.skillPoint5 = skillPoint5;
+        this.skillName6 = skillName6;
+        this.skillPoint6 = skillPoint6;
+        this.skillName7 = skillName7;
+        this.skillPoint7 = skillPoint7;
+        this.skillName8 = skillName8;
+        this.skillPoint8 = skillPoint8;
+        this.skillName9 = skillName9;
+        this.skillPoint9 = skillPoint9;
+        this.skillName10 = skillName10;
+        this.skillPoint10 = skillPoint10;
+        this.skillName11 = skillName11;
+        this.skillPoint11 = skillPoint11;
+        this.skillName12 = skillName12;
+        this.skillPoint12 = skillPoint12;
     }
 }
 

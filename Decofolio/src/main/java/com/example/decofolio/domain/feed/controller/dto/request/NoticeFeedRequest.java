@@ -4,7 +4,6 @@ import lombok.*;
 import org.hibernate.validator.constraints.URL;
 
 import javax.validation.constraints.Email;
-import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -138,8 +137,57 @@ public class NoticeFeedRequest {
 
     private String activityContent5;
 
+    //스킬(ex.skillName : 스킬명,  skillPoint: 스킬 점수)
+    private String skillName1;
+
+    private String skillPoint1;
+
+    private String skillName2;
+
+    private String skillPoint2;
+
+    private String skillName3;
+
+    private String skillPoint3;
+
+    private String skillName4;
+
+    private String skillPoint4;
+
+    private String skillName5;
+
+    private String skillPoint5;
+
+    private String skillName6;
+
+    private String skillPoint6;
+
+    private String skillName7;
+
+    private String skillPoint7;
+
+    private String skillName8;
+
+    private String skillPoint8;
+
+    private String skillName9;
+
+    private String skillPoint9;
+
+    private String skillName10;
+
+    private String skillPoint10;
+
+    private String skillName11;
+
+    private String skillPoint11;
+
+    private String skillName12;
+
+    private String skillPoint12;
+
     @Builder
-    public NoticeFeedRequest(String title, String subtitle, String name, String phoneNumber, String birthday, String country, String email, String link1, String link2, String link3, String link4, String eductionTitle1, String eductionTitle2, String eductionContent1, String eductionContent2, String experienceContent1, String experienceContent2, String experienceContent3, String experienceContent4, String experienceContent5, String experienceTitle1, String experienceTitle2, String experienceTitle3, String experienceTitle4, String experienceTitle5, String certificateDay1, String certificateTitle1, String certificateDay2, String certificateTitle2, String certificateDay3, String certificateTitle3, String certificateDay4, String certificateTitle4, String certificateDay5, String certificateTitle5, String awardTitle1, String awardDay1, String awardTitle2, String awardDay2, String awardTitle3, String awardDay3, String awardTitle4, String awardDay4, String awardTitle5, String awardDay5, String activityTitle1, String activityContent1, String activityTitle2, String activityContent2, String activityTitle3, String activityContent3, String activityTitle4, String activityContent4, String activityTitle5, String activityContent5) {
+    public NoticeFeedRequest(String title, String subtitle, String name, String phoneNumber, String birthday, String country, String email, String link1, String link2, String link3, String link4, String eductionTitle1, String eductionTitle2, String eductionContent1, String eductionContent2, String experienceContent1, String experienceContent2, String experienceContent3, String experienceContent4, String experienceContent5, String experienceTitle1, String experienceTitle2, String experienceTitle3, String experienceTitle4, String experienceTitle5, String certificateDay1, String certificateTitle1, String certificateDay2, String certificateTitle2, String certificateDay3, String certificateTitle3, String certificateDay4, String certificateTitle4, String certificateDay5, String certificateTitle5, String awardTitle1, String awardDay1, String awardTitle2, String awardDay2, String awardTitle3, String awardDay3, String awardTitle4, String awardDay4, String awardTitle5, String awardDay5, String activityTitle1, String activityContent1, String activityTitle2, String activityContent2, String activityTitle3, String activityContent3, String activityTitle4, String activityContent4, String activityTitle5, String activityContent5, String skillName1, String skillPoint1, String skillName2, String skillPoint2, String skillName3, String skillPoint3, String skillName4, String skillPoint4, String skillName5, String skillPoint5, String skillName6, String skillPoint6, String skillName7, String skillPoint7, String skillName8, String skillPoint8, String skillName9, String skillPoint9, String skillName10, String skillPoint10, String skillName11, String skillPoint11, String skillName12, String skillPoint12) {
         this.title = title;
         this.subtitle = subtitle;
         this.name = name;
@@ -195,6 +243,30 @@ public class NoticeFeedRequest {
         this.activityContent4 = activityContent4;
         this.activityTitle5 = activityTitle5;
         this.activityContent5 = activityContent5;
+        this.skillName1 = skillName1;
+        this.skillPoint1 = skillPoint1;
+        this.skillName2 = skillName2;
+        this.skillPoint2 = skillPoint2;
+        this.skillName3 = skillName3;
+        this.skillPoint3 = skillPoint3;
+        this.skillName4 = skillName4;
+        this.skillPoint4 = skillPoint4;
+        this.skillName5 = skillName5;
+        this.skillPoint5 = skillPoint5;
+        this.skillName6 = skillName6;
+        this.skillPoint6 = skillPoint6;
+        this.skillName7 = skillName7;
+        this.skillPoint7 = skillPoint7;
+        this.skillName8 = skillName8;
+        this.skillPoint8 = skillPoint8;
+        this.skillName9 = skillName9;
+        this.skillPoint9 = skillPoint9;
+        this.skillName10 = skillName10;
+        this.skillPoint10 = skillPoint10;
+        this.skillName11 = skillName11;
+        this.skillPoint11 = skillPoint11;
+        this.skillName12 = skillName12;
+        this.skillPoint12 = skillPoint12;
     }
 }
 
