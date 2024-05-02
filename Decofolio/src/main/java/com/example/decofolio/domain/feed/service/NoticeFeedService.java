@@ -57,7 +57,7 @@ public class NoticeFeedService {
                 .certificateDay3(noticeFeedRequest.getCertificateDay3())
                 .certificateTitle4(noticeFeedRequest.getCertificateTitle4())
                 .certificateDay4(noticeFeedRequest.getCertificateDay4())
-                .certificateTitle4(noticeFeedRequest.getCertificateTitle5())
+                .certificateTitle5(noticeFeedRequest.getCertificateTitle5())
                 .certificateDay5(noticeFeedRequest.getCertificateDay5())
                 .awardTitle1(noticeFeedRequest.getAwardTitle1())
                 .awardDay1(noticeFeedRequest.getAwardDay1())
@@ -107,4 +107,5 @@ public class NoticeFeedService {
                 .build();
         feedRepository.save(feed);
     }
+
 }
