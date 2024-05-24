@@ -21,6 +21,7 @@ public class FeedController {
     private final DeleteFeedService deleteFeedService;
     private final FeedListService feedListService;
     private final AddLikeService addLikeService;
+    private final SubLikeService subLikeService;
 
     //포트폴리오 작성
     @ResponseStatus(HttpStatus.CREATED)
@@ -54,6 +55,13 @@ public class FeedController {
     @PostMapping("/{feed-id}/like")
     public void like(@PathVariable("feed-id") Long feedId) {
         addLikeService.execute(feedId);
+    }
+
+    //좋아요 취소
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{feed-id}/like")
+    public void unlike(@PathVariable("feed-id") Long feedId) {
+        subLikeService.execute(feedId);
     }
 }
 
