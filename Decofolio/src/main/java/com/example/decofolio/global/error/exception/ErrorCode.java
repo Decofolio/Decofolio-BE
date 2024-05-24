@@ -18,6 +18,9 @@ public enum ErrorCode {
     FEED_NOT_FOUUND(404, "Feed Not Found"),
     WRITER_MISMATCH(401, "Writer Mismatch"),
     LINK_NOT_FOUND(404, "Link Not Found"),
+    COMMENT_FOT_FOUND(404, "COMMENT_FOT_FOUND"),
+    MEETING_NOT_FOUND(404, "Meeting Not Found"),
+    INVALID_COMMENT(401, "Invalid Comment"),
 
 
     USER_EXISTS(409, "User Already Exists"),
