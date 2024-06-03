@@ -3,7 +3,7 @@ package com.example.decofolio.domain.feed.service;
 import com.example.decofolio.domain.feed.controller.dto.request.UpdateFeedRequest;
 import com.example.decofolio.domain.feed.domain.Feed;
 import com.example.decofolio.domain.feed.exception.CannotBeModifiedException;
-import com.example.decofolio.domain.feed.fcade.FeedFacade;
+import com.example.decofolio.domain.feed.facade.FeedFacade;
 import com.example.decofolio.domain.user.domain.User;
 import com.example.decofolio.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
