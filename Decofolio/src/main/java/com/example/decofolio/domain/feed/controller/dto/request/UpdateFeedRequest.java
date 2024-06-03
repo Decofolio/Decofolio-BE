@@ -186,4 +186,11 @@ public class UpdateFeedRequest {
     private String skillName12;
 
     private String skillPoint12;
+
+    //태그(ex.tag : 태그)
+    private String tag1;
+
+    private String tag2;
+
+    private String tag3;
 }

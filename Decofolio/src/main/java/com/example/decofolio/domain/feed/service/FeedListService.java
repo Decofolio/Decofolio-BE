@@ -37,7 +37,9 @@ public class FeedListService {
         return FeedListResponse.builder()
                 .feedId(feed.getFeedId())
                 .title(feed.getTitle())
-                .subtitle(feed.getSubtitle())
+                .tag1(feed.getTag1())
+                .tag2(feed.getTag2())
+                .tag3(feed.getTag3())
                 .build();
     }
 }
