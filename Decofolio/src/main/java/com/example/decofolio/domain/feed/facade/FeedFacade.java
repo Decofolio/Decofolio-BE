@@ -1,4 +1,4 @@
-package com.example.decofolio.domain.feed.fcade;
+package com.example.decofolio.domain.feed.facade;
 
 import com.example.decofolio.domain.feed.domain.Feed;
 import com.example.decofolio.domain.feed.domain.repository.FeedRepository;

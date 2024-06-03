@@ -50,4 +50,13 @@ public class Project {
         this.user = user;
     }
 
+    public void updateProject(String title, String text, String skill1, String skill2, String link1, String link2) {
+        this.title = title;
+        this.text = text;
+        this.skill1 = skill1;
+        this.skill2 = skill2;
+        this.link1 = link1;
+        this.link2 = link2;
+    }
+
 }
