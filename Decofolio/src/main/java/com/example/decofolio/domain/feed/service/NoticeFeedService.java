@@ -103,6 +103,9 @@ public class NoticeFeedService {
                 .skillPoint11(noticeFeedRequest.getSkillPoint11())
                 .skillName12(noticeFeedRequest.getSkillName12())
                 .skillPoint12(noticeFeedRequest.getSkillPoint12())
+                .tag1(noticeFeedRequest.getTag1())
+                .tag2(noticeFeedRequest.getTag2())
+                .tag3(noticeFeedRequest.getTag3())
                 .user(user)
                 .build();
         feedRepository.save(feed);

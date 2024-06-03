@@ -9,6 +9,11 @@ public class FeedListResponse {
     private Long feedId;
     //제목
     private String title;
-    //한줄 소개
-    private String subtitle;
+
+    private String tag1;
+
+    private String tag2;
+
+    private String tag3;
+
 }

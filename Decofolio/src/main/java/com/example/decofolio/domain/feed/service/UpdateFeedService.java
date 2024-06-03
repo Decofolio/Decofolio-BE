@@ -105,7 +105,10 @@ public class UpdateFeedService {
                 updateFeedRequest.getSkillName11(),
                 updateFeedRequest.getSkillPoint11(),
                 updateFeedRequest.getSkillName12(),
-                updateFeedRequest.getSkillPoint12()
+                updateFeedRequest.getSkillPoint12(),
+                updateFeedRequest.getTag1(),
+                updateFeedRequest.getTag2(),
+                updateFeedRequest.getTag3()
         );
 
         feed.updateEmail(updateFeedRequest.getEmail());
