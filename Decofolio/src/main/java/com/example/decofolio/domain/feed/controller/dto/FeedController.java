@@ -63,5 +63,6 @@ public class FeedController {
     public void unlike(@PathVariable("feed-id") Long feedId) {
         subLikeService.execute(feedId);
     }
+
 }
 

@@ -12,6 +12,7 @@ public enum ErrorCode {
     PASSWORD_MISMATCH(401, "Password Mismatch"),
     CANNOT_BE_DELETED(401, "Cannot Be Deleted"),
     CANNOT_BE_MODIFIED(401, "Cannot Be Modified"),
+    INVALID_COMMENT(401, "Invalid Comment"),
 
     USER_NOT_FOUND(404, "User Not Found"),
     REFRESH_TOKEN_NOT_FOUND(404, "Refresh Token Not Found"),
@@ -20,7 +21,8 @@ public enum ErrorCode {
     LINK_NOT_FOUND(404, "Link Not Found"),
     COMMENT_FOT_FOUND(404, "COMMENT_FOT_FOUND"),
     MEETING_NOT_FOUND(404, "Meeting Not Found"),
-    INVALID_COMMENT(401, "Invalid Comment"),
+    FEED_VIEW_COUNT_NOT_FOUND(404, "Feed View Count Not Found"),
+
 
 
     USER_EXISTS(409, "User Already Exists"),
