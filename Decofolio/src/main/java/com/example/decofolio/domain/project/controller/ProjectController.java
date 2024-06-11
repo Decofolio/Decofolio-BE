@@ -26,7 +26,7 @@ public class ProjectController {
     //포트폴리오 작성
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public void noticeFeed(@RequestBody @Valid NoticeProjectRequest noticeProjectRequest) {
+    public void noticeProject(@RequestBody @Valid NoticeProjectRequest noticeProjectRequest) {
         noticeProjectService.execute(noticeProjectRequest);
     }
 
