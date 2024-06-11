@@ -5,6 +5,7 @@ import com.example.decofolio.domain.feed.controller.dto.request.UpdateFeedReques
 import com.example.decofolio.domain.feed.service.UpdateFeedService;
 import com.example.decofolio.domain.project.controller.dto.request.NoticeProjectRequest;
 import com.example.decofolio.domain.project.controller.dto.request.UpdateProjectRequest;
+import com.example.decofolio.domain.project.service.DeleteProjectService;
 import com.example.decofolio.domain.project.service.NoticeProjectService;
 import com.example.decofolio.domain.project.service.UpdateProjectService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,7 @@ public class ProjectController {
 
     private final NoticeProjectService noticeProjectService;
     private final UpdateProjectService updateProjectService;
+    private final DeleteProjectService deleteProjectService;
 
     //포트폴리오 작성
     @ResponseStatus(HttpStatus.CREATED)
@@ -33,5 +35,12 @@ public class ProjectController {
     @PatchMapping("/{project-id}")
     public void updateProject(@PathVariable("project-id") Long projectId, @RequestBody @Valid UpdateProjectRequest updateProjectRequest) {
         updateProjectService.execute(projectId, updateProjectRequest);
+    }
+
+    //포트폴리오 삭제
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{project-id}")
+    public void deleteProject(@PathVariable("project-id") Long projectId) {
+        deleteProjectService.execute(projectId);
     }
 }
