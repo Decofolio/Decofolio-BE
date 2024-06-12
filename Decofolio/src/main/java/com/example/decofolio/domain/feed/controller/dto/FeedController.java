@@ -3,6 +3,7 @@ package com.example.decofolio.domain.feed.controller.dto;
 import com.example.decofolio.domain.feed.controller.dto.request.NoticeFeedRequest;
 import com.example.decofolio.domain.feed.controller.dto.request.UpdateFeedRequest;
 import com.example.decofolio.domain.feed.controller.dto.response.FeedListResponse;
+import com.example.decofolio.domain.feed.controller.dto.response.GetFeedDetailsResponse;
 import com.example.decofolio.domain.feed.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ public class FeedController {
     private final FeedListService feedListService;
     private final AddLikeService addLikeService;
     private final SubLikeService subLikeService;
+    private final GetFeedDetailsService getFeedDetailsService;
 
     //포트폴리오 작성
     @ResponseStatus(HttpStatus.CREATED)
@@ -48,6 +50,12 @@ public class FeedController {
     @GetMapping
     public List<FeedListResponse> getFeedList() {
         return feedListService.getFeedList();
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/details/{feed-id}")
+    public GetFeedDetailsResponse getDetails(@PathVariable("feed-id") Long feedId) {
+        return getFeedDetailsService.getDetails(feedId);
     }
 
     //좋아요
