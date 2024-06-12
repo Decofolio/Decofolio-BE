@@ -1,15 +1,18 @@
-package com.example.decofolio.domain.feed.controller.dto.request;
+package com.example.decofolio.domain.feed.controller.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.URL;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Size;
 
 @Getter
-@NoArgsConstructor
-public class UpdateFeedRequest {
+@Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@AllArgsConstructor
+public class GetFeedDetailsResponse {
 
     private String title;
 

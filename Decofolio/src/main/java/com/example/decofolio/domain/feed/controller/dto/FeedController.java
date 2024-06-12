@@ -3,10 +3,8 @@ package com.example.decofolio.domain.feed.controller.dto;
 import com.example.decofolio.domain.feed.controller.dto.request.NoticeFeedRequest;
 import com.example.decofolio.domain.feed.controller.dto.request.UpdateFeedRequest;
 import com.example.decofolio.domain.feed.controller.dto.response.FeedListResponse;
-import com.example.decofolio.domain.feed.service.DeleteFeedService;
-import com.example.decofolio.domain.feed.service.FeedListService;
-import com.example.decofolio.domain.feed.service.NoticeFeedService;
-import com.example.decofolio.domain.feed.service.UpdateFeedService;
+import com.example.decofolio.domain.feed.controller.dto.response.GetFeedDetailsResponse;
+import com.example.decofolio.domain.feed.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +21,9 @@ public class FeedController {
     private final UpdateFeedService updateFeedService;
     private final DeleteFeedService deleteFeedService;
     private final FeedListService feedListService;
+    private final AddLikeService addLikeService;
+    private final SubLikeService subLikeService;
+    private final GetFeedDetailsService getFeedDetailsService;
 
     //포트폴리오 작성
     @ResponseStatus(HttpStatus.CREATED)
@@ -50,5 +51,26 @@ public class FeedController {
     public List<FeedListResponse> getFeedList() {
         return feedListService.getFeedList();
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/details/{feed-id}")
+    public GetFeedDetailsResponse getDetails(@PathVariable("feed-id") Long feedId) {
+        return getFeedDetailsService.getDetails(feedId);
+    }
+
+    //좋아요
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/{feed-id}/like")
+    public void like(@PathVariable("feed-id") Long feedId) {
+        addLikeService.execute(feedId);
+    }
+
+    //좋아요 취소
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{feed-id}/like")
+    public void unlike(@PathVariable("feed-id") Long feedId) {
+        subLikeService.execute(feedId);
+    }
+
 }
 
