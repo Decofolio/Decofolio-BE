@@ -52,6 +52,7 @@ public class FeedController {
         return feedListService.getFeedList();
     }
 
+    //포트폴리오 자세히 보기
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/details/{feed-id}")
     public GetFeedDetailsResponse getDetails(@PathVariable("feed-id") Long feedId) {
