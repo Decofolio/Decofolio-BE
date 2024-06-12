@@ -16,7 +16,6 @@ public class GetFeedDetailsService {
         Feed feed = feedRepository.findByFeedId(feedId);
         return mapFeedToResponse(feed);
     }
-
     private GetFeedDetailsResponse mapFeedToResponse(Feed feed) {
         return GetFeedDetailsResponse.builder()
                 .title(feed.getTitle())
