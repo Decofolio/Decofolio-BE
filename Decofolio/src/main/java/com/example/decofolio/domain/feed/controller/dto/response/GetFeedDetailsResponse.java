@@ -1,5 +1,6 @@
 package com.example.decofolio.domain.feed.controller.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -9,6 +10,7 @@ import javax.validation.constraints.Email;
 
 @Getter
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 public class GetFeedDetailsResponse {
 
