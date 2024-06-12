@@ -9,10 +9,8 @@ import com.example.decofolio.domain.feed.service.UpdateFeedService;
 import com.example.decofolio.domain.project.controller.dto.request.NoticeProjectRequest;
 import com.example.decofolio.domain.project.controller.dto.request.UpdateProjectRequest;
 import com.example.decofolio.domain.project.controller.dto.response.GetProjectDetailsResponse;
-import com.example.decofolio.domain.project.service.DeleteProjectService;
-import com.example.decofolio.domain.project.service.GetProjectDetailsService;
-import com.example.decofolio.domain.project.service.NoticeProjectService;
-import com.example.decofolio.domain.project.service.UpdateProjectService;
+import com.example.decofolio.domain.project.controller.dto.response.ProjectListResponse;
+import com.example.decofolio.domain.project.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -29,29 +27,36 @@ public class ProjectController {
     private final UpdateProjectService updateProjectService;
     private final DeleteProjectService deleteProjectService;
     private final GetProjectDetailsService getProjectDetailsService;
+    private final ProjectListService projectListService;
 
-    //포트폴리오 작성
+    //프트젝트 작성
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void noticeProject(@RequestBody @Valid NoticeProjectRequest noticeProjectRequest) {
         noticeProjectService.execute(noticeProjectRequest);
     }
 
-    //포트폴리오 수정
+    //프트젝트 수정
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PatchMapping("/{project-id}")
     public void updateProject(@PathVariable("project-id") Long projectId, @RequestBody @Valid UpdateProjectRequest updateProjectRequest) {
         updateProjectService.execute(projectId, updateProjectRequest);
     }
 
-    //포트폴리오 자세히 보기
+    //프트젝트 자세히 보기
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/details/{project-id}")
     public GetProjectDetailsResponse getDetails(@PathVariable("project-id") Long projectId) {
         return getProjectDetailsService.getDetails(projectId);
     }
 
-    //포트폴리오 삭제
+    //프트젝트 목록
+    @GetMapping
+    public List<ProjectListResponse> getFeedList() {
+        return projectListService.getProjectList();
+    }
+
+    //프트젝트 삭제
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{project-id}")
     public void deleteProject(@PathVariable("project-id") Long projectId) {
