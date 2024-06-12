@@ -10,7 +10,9 @@ import lombok.Getter;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 public class GetProjectDetailsResponse {
-    private Long feedId;
+    private Long projectId;
+
+    private String title;
 
     private String text;
 

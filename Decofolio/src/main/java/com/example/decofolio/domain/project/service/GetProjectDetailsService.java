@@ -22,6 +22,7 @@ public class GetProjectDetailsService {
 
     private GetProjectDetailsResponse mapFeedToResponse(Project project) {
         return GetProjectDetailsResponse.builder()
+                .title(project.getTitle())
                 .text(project.getText())
                 .link1(project.getLink1())
                 .link2(project.getLink2())
