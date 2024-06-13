@@ -1,11 +1,13 @@
 package com.example.decofolio.domain.feed.controller.dto.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
 @Getter
 @Builder
-public class FeedListResponse {
+@AllArgsConstructor
+public class SearchResponse {
 
     private Long feedId;
     //제목
