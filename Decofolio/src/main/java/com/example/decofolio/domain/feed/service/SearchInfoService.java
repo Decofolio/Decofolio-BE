@@ -15,25 +15,13 @@ public class SearchInfoService {
 
     private final FeedRepository feedRepository;
 
-    public List<SearchResponse> execute(String tag1, String tag2, String tag3) {
+    public List<SearchResponse> execute(String title) {
 
         List<Feed> feeds;
 
-        if (tag1 != null && tag2 != null && tag3 != null) {
-            feeds = feedRepository.findByTag1AndTag2AndTag3(tag1, tag2, tag3);
-        } else if (tag1 != null && tag2 != null && tag3.equals("''")) {
-            feeds = feedRepository.findByTag1AndTag2(tag1, tag2);
-        } else if (tag1.equals("''") && tag2 != null && tag3 != null) {
-            feeds = feedRepository.findByTag2AndTag3(tag2, tag3);
-        } else if (tag1 != null && tag2.equals("''") && tag3 != null) {
-            feeds = feedRepository.findByTag1AndTag3(tag1, tag3);
-        } else if (tag1.equals("''") && tag2.equals("''") && tag3 != null) {
-            feeds = feedRepository.findByTag3(tag3);
-        } else if (tag1.equals("''") && tag2 != null&& tag3.equals("''")) {
-            feeds = feedRepository.findByTag2(tag2);
-        } else if (tag1 != null && tag1.equals("''") && tag2.equals("''")) {
-            feeds = feedRepository.findByTag1(tag1);
-        } else {
+        if (title != null) {
+            feeds = feedRepository.findByTitle(title);
+        }else {
             feeds = feedRepository.findAll();
         }
 
