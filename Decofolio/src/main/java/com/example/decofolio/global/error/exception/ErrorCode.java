@@ -25,7 +25,6 @@ public enum ErrorCode {
     FEED_VIEW_COUNT_NOT_FOUND(404, "Feed View Count Not Found"),
 
 
-
     USER_EXISTS(409, "User Already Exists"),
 
     INTERNAL_SERVER_ERROR(500, "Internal Server Error");
