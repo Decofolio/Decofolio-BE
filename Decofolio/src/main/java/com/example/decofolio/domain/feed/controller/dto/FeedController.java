@@ -58,8 +58,8 @@ public class FeedController {
     //포트폴리오 검색
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/search")
-    public List<SearchResponse> searchFeed(@RequestParam String tag1, @RequestParam String tag2, @RequestParam String tag3) {
-        return searchInfoService.execute(tag1, tag2, tag3);
+    public List<SearchResponse> searchFeed(@RequestParam String title) {
+        return searchInfoService.execute(title);
     }
 
     //포트폴리오 자세히 보기
