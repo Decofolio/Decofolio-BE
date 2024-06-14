@@ -1,26 +1,31 @@
+server:
+  port: 8000
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:mysql://localhost:3306/decofolio?serverTimezone=Asia/Seoul
+    username: root
+    password: 'yhm75040611?'
 
   jpa:
     database: mysql
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
     hibernate:
       ddl-auto: update
+    show_sql: true
 
   jackson:
     property-naming-strategy: SNAKE_CASE
 
   jwt:
-    header: ${HEADER}
-    secret: ${SECRET_KEY}
-    exp:
-      access: ${ACCESS}
-      refresh: ${REFRESH}
+    header: Authorization
+    secret-key: your_actual_secret_key_here
+    access-exp: 3600 # Access token expiration time in seconds (e.g., 1 hour)
+    refresh-exp: 86400 # Refresh token expiration time in seconds (e.g., 1 day)
+    prefix: Bearer
 
   redis:
-    host: ${REDIS_HOST}
-    port: ${REDIS_PORT}
+    host: localhost
+    port: 6379
+
