@@ -1,34 +1,51 @@
 package com.example.decofolio.domain.viewcount.domain;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
-import org.springframework.data.redis.core.TimeToLive;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@RedisHash
+@Entity
 public class FeedViewCount {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Long feedId;
+    private int viewCount;
 
-    private Long viewCount;
-
-    @TimeToLive
-    private Long expiredAt;
-
-    @Builder
-    public FeedViewCount(Long feedId) {
-        this.feedId = feedId;
-        this.viewCount = 0L;
-        this.expiredAt = -1L;
+    // 기본 생성자
+    public FeedViewCount() {
     }
 
-    public void addViewCount(){
-        this.viewCount++;
+    // 매개변수가 있는 생성자
+    public FeedViewCount(Long feedId, int viewCount) {
+        this.feedId = feedId;
+        this.viewCount = viewCount;
+    }
+
+    // Getters and setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getFeedId() {
+        return feedId;
+    }
+
+    public void setFeedId(Long feedId) {
+        this.feedId = feedId;
+    }
+
+    public int getViewCount() {
+        return viewCount;
+    }
+
+    public void setViewCount(int viewCount) {
+        this.viewCount = viewCount;
     }
 }
