@@ -9,6 +9,6 @@ public class ProjectNotFoundException extends CustomException {
     public static final CustomException EXCEPTION = new ProjectNotFoundException();
 
     public ProjectNotFoundException() {
-        super(ErrorCode.FEED_NOT_FOUUND);
+        super(ErrorCode.PROJECT_NOT_FOUND);
     }
 }

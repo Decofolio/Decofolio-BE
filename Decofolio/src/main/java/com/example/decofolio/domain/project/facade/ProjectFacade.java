@@ -14,7 +14,7 @@ public class  ProjectFacade{
 
     private final ProjectRepository projectRepository;
 
-    public Project getFeedById(Long id) {
+    public Project getProjectById(Long id) {
         return projectRepository.findById(id)
                 .orElseThrow(() -> FeedNotFoundException.EXCEPTION);
     }

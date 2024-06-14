@@ -3,6 +3,8 @@ package com.example.decofolio.domain.feed.controller.dto;
 import com.example.decofolio.domain.feed.controller.dto.request.NoticeFeedRequest;
 import com.example.decofolio.domain.feed.controller.dto.request.UpdateFeedRequest;
 import com.example.decofolio.domain.feed.controller.dto.response.FeedListResponse;
+import com.example.decofolio.domain.feed.controller.dto.response.GetFeedDetailsResponse;
+import com.example.decofolio.domain.feed.controller.dto.response.SearchResponse;
 import com.example.decofolio.domain.feed.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,6 +24,8 @@ public class FeedController {
     private final FeedListService feedListService;
     private final AddLikeService addLikeService;
     private final SubLikeService subLikeService;
+    private final GetFeedDetailsService getFeedDetailsService;
+    private final SearchInfoService searchInfoService;
 
     //포트폴리오 작성
     @ResponseStatus(HttpStatus.CREATED)
@@ -44,10 +48,25 @@ public class FeedController {
         updateFeedService.execute(feedId, updateFeedRequest);
     }
 
+
     //포트폴리오 목록
     @GetMapping
     public List<FeedListResponse> getFeedList() {
         return feedListService.getFeedList();
+    }
+
+    //포트폴리오 검색
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/search")
+    public List<SearchResponse> searchFeed(@RequestParam String title) {
+        return searchInfoService.execute(title);
+    }
+
+    //포트폴리오 자세히 보기
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/details/{feed-id}")
+    public GetFeedDetailsResponse getDetails(@PathVariable("feed-id") Long feedId) {
+        return getFeedDetailsService.getDetails(feedId);
     }
 
     //좋아요

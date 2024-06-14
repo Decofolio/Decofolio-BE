@@ -2,6 +2,7 @@ package com.example.decofolio.domain.feed.domain;
 
 import javax.persistence.*;
 
+import com.example.decofolio.domain.comment.domain.Comment;
 import com.example.decofolio.domain.like.FeedLike;
 import com.example.decofolio.domain.user.domain.User;
 import lombok.AccessLevel;
@@ -272,6 +273,9 @@ public class Feed {
 
     @OneToMany(mappedBy = "feed", cascade = CascadeType.REMOVE)
     private List<FeedLike> feedLikes;
+
+    @OneToMany(mappedBy = "feed", cascade = CascadeType.REMOVE)
+    private List<Comment> comments;
 
     @Builder
     public Feed(String title, String subtitle, String name, String phoneNumber, String birthday, String country, String link1, String link2, String link3, String link4, String email, String eductionTitle1, String eductionTitle2,  String eductionContent1, String eductionContent2, String experienceTitle1, String experienceContent1, String experienceTitle2, String experienceContent2,String experienceTitle3, String experienceContent3,String experienceTitle4, String experienceContent4,String experienceTitle5, String experienceContent5, String certificateDay1, String certificateTitle1, String certificateDay2, String certificateTitle2, String certificateDay3, String certificateTitle3, String certificateDay4, String certificateTitle4, String certificateDay5, String certificateTitle5, String awardTitle1, String awardDay1, String awardTitle2, String awardDay2, String awardTitle3, String awardDay3, String awardTitle4, String awardDay4, String awardTitle5, String awardDay5, String activityTitle1, String activityContent1, String activityTitle2, String activityContent2, String activityTitle3, String activityContent3, String activityTitle4, String activityContent4, String activityTitle5, String activityContent5, String skillName1, String skillPoint1, String skillName2, String skillPoint2, String skillName3, String skillPoint3, String skillName4, String skillPoint4, String skillName5, String skillPoint5, String skillName6, String skillPoint6, String skillName7, String skillPoint7, String skillName8, String skillPoint8, String skillName9, String skillPoint9, String skillName10, String skillPoint10, String skillName11, String skillPoint11, String skillName12, String skillPoint12, String tag1, String tag2, String tag3, User user) {

@@ -14,7 +14,7 @@ public class FeedViewCountController {
     private FeedViewCountService service;
 
     // 조회수를 증가시키는 엔드포인트
-    @PostMapping("/{feedId}/increment")
+    @PostMapping("/{feedId}")
     public ResponseEntity<ViewCountResponse> incrementViewCount(@PathVariable Long feedId) {
         int newViewCount = service.incrementViewCount(feedId);
         ViewCountResponse response = new ViewCountResponse(feedId, newViewCount);

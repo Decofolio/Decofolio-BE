@@ -26,7 +26,7 @@ public class UpdateProjectService {
     public void execute(Long projectId, UpdateProjectRequest updateProjectRequest) {
 
         User user = userFacade.getCurrentUser();
-        Project project = projectFacade.getFeedById(projectId);
+        Project project = projectFacade.getProjectById(projectId);
 
         if (!user.equals(project.getUser())) {
             throw CannotBeModifiedException.EXCEPTION;
