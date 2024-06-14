@@ -1,13 +1,20 @@
 package com.example.decofolio.domain.comment.presentation.dto.response;
 
 
-import lombok.AllArgsConstructor;
+
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
+@Builder
 public class CreateCommentResponse {
 
     private Long commentId;
+    private String content;
+
+    public CreateCommentResponse(Long commentId, String content) {
+        this.commentId = commentId;
+        this.content = content;
+    }
 
 }
