@@ -17,6 +17,7 @@ public class CommentController {
 
     private final CreateCommentService createCommentService;
 
+    //댓글 작성
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{feed-id}")
     public CreateCommentResponse createComment(@PathVariable("feed-id") Long feedId, @RequestBody @Valid CreateCommentRequest request) {

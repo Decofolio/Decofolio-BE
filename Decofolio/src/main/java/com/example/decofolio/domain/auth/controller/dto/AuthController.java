@@ -17,11 +17,13 @@ public class AuthController {
     private final TokenService tokenService;
     private final SignInService signInService;
 
+    //토큰 재발급
     @PutMapping("/token")
     public TokenResponse userTokenRefresh(@RequestHeader("Refresh-Token") String refreshToken) {
         return tokenService.execute(refreshToken);
     }
 
+    //로그인
     @PostMapping("/login")
     public TokenResponse signIn(@RequestBody @Valid SignInRequest signInRequest) {
         return signInService.execute(signInRequest);
