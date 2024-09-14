@@ -21,7 +21,6 @@ public class FeedViewCountController {
         return ResponseEntity.ok(response);
     }
 
-
     @GetMapping("/{feedId}/viewCount")
     public ResponseEntity<ViewCountResponse> getViewCount(@PathVariable Long feedId) {
         int viewCount = service.getViewCount(feedId);
