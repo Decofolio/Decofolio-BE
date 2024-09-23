@@ -33,7 +33,6 @@ public class Comment {
     @JoinColumn(name = "feed_id", nullable = false)
     private Feed feed;
 
-
     @Builder
     public Comment(String content, User user, Feed feed) {
         this.content = content;
