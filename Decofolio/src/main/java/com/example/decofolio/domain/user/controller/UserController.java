@@ -29,6 +29,7 @@ public class UserController {
     public void signUp(@RequestBody @Valid SignUpRequest signUpRequest) {
         signUpService.execute(signUpRequest);
     }
+
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping
     public void Withdrawal(@RequestBody @Valid WithdrawalRequest request) {
@@ -40,6 +41,7 @@ public class UserController {
     public void updateUser(@RequestBody @Valid UpdateInfoRequest updateInfoRequest) {
         updateInfoService.execute(updateInfoRequest);
     }
+
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/logout")
     public void logout() {
